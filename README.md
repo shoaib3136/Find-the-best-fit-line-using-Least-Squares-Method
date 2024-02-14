@@ -77,7 +77,8 @@ plt.show()
 
 ## Output:
 ![best fit line](sam.png)
-![image](https://github.com/shoaib3136/Find-the-best-fit-line-using-Least-Squares-Method/assets/117919362/735ed1d6-3014-4d00-bf59-c7a6b6a9533f)
+![image](https://github.com/shoaib3136/Find-the-best-fit-line-using-Least-Squares-Method/assets/117919362/25a92d43-85af-470c-ad0a-4f34a9e74fe0)
+![image](https://github.com/shoaib3136/Find-the-best-fit-line-using-Least-Squares-Method/assets/117919362/8f955059-e8e6-4473-b044-2e2222cea05c)
 
 
 
