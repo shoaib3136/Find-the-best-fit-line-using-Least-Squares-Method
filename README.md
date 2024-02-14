@@ -20,13 +20,65 @@ To implement univariate Linear Regression to fit a straight line using least squ
 ```
 /*
 Program to implement univariate Linear Regression to fit a straight line using least squares.
-Developed by: 
-RegisterNumber:  
+Developed by:Shaik Shoaib Nawaz
+RegisterNumber:212222240094 
 */
+x=[2,9,5,5,3,7,1,8,6,2]
+y=[69,98,82,77,71,84,55,94,84,64]
+diff_x=[0,0,0,0,0,0,0,0,0,0]
+diff_y=[0,0,0,0,0,0,0,0,0,0]
+total_data=10
+xsum=0
+ysum=0
+for i in range(0,len(x)):
+  xsum=x[i]+xsum
+  ysum=y[i]+ysum
+
+print(xsum)
+print(ysum)
+
+xmean=xsum/total_data
+ymean=ysum/total_data
+
+print(xmean)
+print(ymean)
+
+for i in range(0,len(x)):
+  diff_x[i]=x[i]-xmean
+  diff_y[i]=y[i]-ymean
+
+print(diff_x)
+print(diff_y)
+
+mul_diff=0
+sq_diff_x=0
+
+for i in range(0,len(x)):
+  mul_diff=(diff_x[i]*diff_y[i])+mul_diff
+  sq_diff_x=(diff_x[i]*diff_x[i])+sq_diff_x
+
+print(mul_diff)
+print(sq_diff_x)
+
+b1=mul_diff/sq_diff_x
+print(b1)
+b0=ymean-(b1*xmean)
+print(b0)
+
+print("y=",b0,"+",b1,"x")
+
+import matplotlib.pyplot as plt
+import numpy as np
+plt.scatter(x,y)
+yfit = [b0 + b1* xi for xi in x]
+plt.plot(x, yfit)
+plt.show()
 ```
 
 ## Output:
 ![best fit line](sam.png)
+![image](https://github.com/shoaib3136/Find-the-best-fit-line-using-Least-Squares-Method/assets/117919362/735ed1d6-3014-4d00-bf59-c7a6b6a9533f)
+
 
 
 ## Result:
