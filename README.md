@@ -23,64 +23,51 @@ Program to implement univariate Linear Regression to fit a straight line using l
 Developed by:Shaik Shoaib Nawaz
 RegisterNumber:212222240094 
 */
-x=[2,9,5,5,3,7,1,8,6,2]
-y=[69,98,82,77,71,84,55,94,84,64]
-diff_x=[0,0,0,0,0,0,0,0,0,0]
-diff_y=[0,0,0,0,0,0,0,0,0,0]
-total_data=10
-xsum=0
-ysum=0
-for i in range(0,len(x)):
-  xsum=x[i]+xsum
-  ysum=y[i]+ysum
+import numpy as np
+import matplotlib.pyplot as plt
 
-print(xsum)
-print(ysum)
+# initialization of x,y
+x = np.array(eval(input()))
+y = np.array(eval(input()))
+print(x)
+print(y)
 
-xmean=xsum/total_data
-ymean=ysum/total_data
+# mean
+x_mean = np.mean(x)
+y_mean = np.mean(y)
+print(x_mean)
+print(y_mean)
 
-print(xmean)
-print(ymean)
+# slope calculation
+# b1=(xi-x')(yi-y')/(xi-x')**2
+b1 = 0
+num = 0
+denom = 0
+for i in range(len(x)):
+    num = num + (x[i] - x_mean) * (y[i] - y_mean)
+    denom = denom + ((x[i] - x_mean)**2)
 
-for i in range(0,len(x)):
-  diff_x[i]=x[i]-xmean
-  diff_y[i]=y[i]-ymean
-
-print(diff_x)
-print(diff_y)
-
-mul_diff=0
-sq_diff_x=0
-
-for i in range(0,len(x)):
-  mul_diff=(diff_x[i]*diff_y[i])+mul_diff
-  sq_diff_x=(diff_x[i]*diff_x[i])+sq_diff_x
-
-print(mul_diff)
-print(sq_diff_x)
-
-b1=mul_diff/sq_diff_x
+b1 = num / denom
 print(b1)
-b0=ymean-(b1*xmean)
+
+# b0=y'-b1x'
+b0 = y_mean - (x_mean * b1)
 print(b0)
 
-print("y=",b0,"+",b1,"x")
+# line equation
+y_pred = b0 + (b1 * x)
+print(y_pred)
 
-import matplotlib.pyplot as plt
-import numpy as np
-plt.scatter(x,y)
-yfit = [b0 + b1* xi for xi in x]
-plt.plot(x, yfit)
+# graph
+plt.scatter(x, y)
+plt.plot(x, y_pred, color='orange')
 plt.show()
 ```
 
 ## Output:
 ![best fit line](sam.png)
-![image](https://github.com/shoaib3136/Find-the-best-fit-line-using-Least-Squares-Method/assets/117919362/50eac31d-aae8-4313-96b7-f7de247f78a6)
-![image](https://github.com/shoaib3136/Find-the-best-fit-line-using-Least-Squares-Method/assets/117919362/8f955059-e8e6-4473-b044-2e2222cea05c)
-
-
+![image](https://github.com/shoaib3136/Find-the-best-fit-line-using-Least-Squares-Method/assets/117919362/511c5243-5a90-4280-8742-48cdd9f8953c)
+![image](https://github.com/shoaib3136/Find-the-best-fit-line-using-Least-Squares-Method/assets/117919362/d2f55c2a-39f5-43a4-a89a-fa2e2b4872e7)
 
 ## Result:
 Thus the univariate Linear Regression was implemented to fit a straight line using least squares using python programming.
