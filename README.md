@@ -66,7 +66,9 @@ plt.show()
 
 ## Output:
 ![best fit line](sam.png)
+
 ![image](https://github.com/shoaib3136/Find-the-best-fit-line-using-Least-Squares-Method/assets/117919362/511c5243-5a90-4280-8742-48cdd9f8953c)
+
 ![image](https://github.com/shoaib3136/Find-the-best-fit-line-using-Least-Squares-Method/assets/117919362/d2f55c2a-39f5-43a4-a89a-fa2e2b4872e7)
 
 ## Result:
